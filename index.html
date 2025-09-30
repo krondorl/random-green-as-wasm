@@ -1,0 +1,47 @@
+<!-- MIT License 2025-present Adam Burucs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Random Green Pixels</title>
+  </head>
+  <body>
+    <h1>Random Green Pixels</h1>
+    <canvas id="randomCanvas"></canvas>
+    <script type="module">
+      import {
+        memory,
+        WIDTH,
+        HEIGHT,
+        FRAMEBUFFER,
+        drawRandomPixels,
+      } from "./build/release.js";
+
+      const canvas = document.getElementById("randomCanvas");
+      canvas.width = WIDTH;
+      canvas.height = HEIGHT;
+      canvas.style.imageRendering = "pixelated";
+
+      const ctx = canvas.getContext("2d");
+      ctx.imageSmoothingEnabled = false;
+
+      const imageData = ctx.createImageData(WIDTH, HEIGHT);
+
+      function frame() {
+        drawRandomPixels();
+        // Copy buffer into ImageData
+        imageData.data.set(
+          new Uint8ClampedArray(
+            memory.buffer,
+            FRAMEBUFFER.value,
+            WIDTH * HEIGHT * 4
+          )
+        );
+        ctx.putImageData(imageData, 0, 0);
+        requestAnimationFrame(frame);
+      }
+
+      frame();
+    </script>
+  </body>
+</html>

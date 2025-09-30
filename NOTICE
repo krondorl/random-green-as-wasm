@@ -1,0 +1,14 @@
+**_NOTICE_**
+
+This software includes components licensed under different licenses.
+
+Portions of this software are derived from or incorporate the following work:
+
+**AssemblyScript**
+
+- Copyright 2017-present, AssemblyScript Authors
+- Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+- A copy of the License is included in this repository.
+- A full copy of the original AssemblyScript NOTICE file can be found here: [https://github.com/AssemblyScript/assemblyscript/blob/main/NOTICE]
+
+All other parts of this software are copyrighted by Adam Burucs and licensed under the MIT License.

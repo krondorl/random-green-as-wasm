@@ -1,0 +1,31 @@
+# Node modules (ignored at all levels)
+**/node_modules
+**/node_modules/**
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Coverage reports
+coverage/
+
+# Compiled output
+**/dist
+**/tmp
+**/out-tsc
+**/bazel-out
+
+# Miscellaneous
+fe-angular/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db

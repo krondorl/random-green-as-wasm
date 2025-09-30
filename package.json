@@ -1,0 +1,31 @@
+{
+  "name": "random-green-as-wasm",
+  "version": "0.1.0",
+  "description": "Random pixels in AssemblyScript x WASM",
+  "type": "module",
+  "scripts": {
+    "test": "node tests",
+    "asbuild:debug": "asc assembly/index.ts --target debug",
+    "asbuild:release": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "random",
+    "pixels",
+    "green",
+    "wasm",
+    "assemblyscript"
+  ],
+  "author": "Adam Burucs",
+  "license": "MIT",
+  "devDependencies": {
+    "assemblyscript": "^0.28.8"
+  },
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  }
+}
