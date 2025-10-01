@@ -1,5 +1,6 @@
 # Set default line endings for text files to LF
 * text=auto eol=lf
+* linguist-language=WebAssembly
 
 # Mark specific file types as binary
 *.wasm binary
